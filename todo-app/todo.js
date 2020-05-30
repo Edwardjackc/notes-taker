@@ -18,19 +18,18 @@ const incompleteTodos = todos.filter(function(todo) {
 });
 
 const summary = document.createElement('h2') 
-summary.textContent = `You have ${incompleteTodos.length} todo left`
+summary.textContent = `You have ${incompleteTodos.length} todos left`
 document.querySelector('body').appendChild(summary)
 
-todos.forEach(function (todos) {
+todos.forEach(function (todo) {
   const p = document.createElement('p')
-  p.textContent = todos.text
+  p.textContent = todo.text
   document.querySelector('body').appendChild(p)
 })
+document.querySelector('#add-todo').addEventListener('click',function(e){
+  
+}) 
 
-document.querySelector('#add__todo').addEventListener('click',function(e){
-  console.log('Add a new todo..')
-})
-
-document.querySelector('#new__todo-text').addEventListener('input', function(e){
+document.querySelector('#new-todo-text').addEventListener('input', function(e){
   console.log(e.target.value)
 })
